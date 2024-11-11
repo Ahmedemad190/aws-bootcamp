@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // Assuming the 'hello_world.sh' script is in the root of the repository
                     sh 'chmod +x hello_world.sh'  // Make the script executable (if not already)
-                    sh './hello.sh'          // Run the Hello World script
+                    sh './hello_world.sh'          // Run the Hello World script
                 }
             }
         }
