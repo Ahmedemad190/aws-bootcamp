@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Ahmedemad190/aws-bootcamp.git'  // Replace with your repository URL
+                git branch: 'main', url: 'https://github.com/Ahmedemad190/aws-bootcamp.git'  // Replace with your repository URL
             }
         }
         stage('Run Hello World') {
