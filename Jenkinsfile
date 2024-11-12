@@ -1,13 +1,13 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'username/repository'  // Replace with your Docker Hub repository
+        DOCKER_IMAGE = '3omda1/first-image'  // Replace with your Docker Hub repository
         DOCKER_TAG = 'latest'
     }
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/username/repository.git'  // Replace with your repository URL
+                    git branch: 'dev', url: 'https://github.com/Ahmedemad190/aws-bootcamp.git'  // Replace with your repository URL
             }
         }
         stage('Build Docker Image') {
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Use withCredentials to securely access Docker Hub credentials
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-valaxy', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         // Log in to Docker Hub using the credentials
                         sh "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
 
